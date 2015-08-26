@@ -6,10 +6,11 @@ Scrutinizing Booters' Leaked Databases with BigData Technologies
 
 ## List of links
 ### Complete dump
-1. "Ragebooter SQL dump" http://pastebin.com/kURX6Cwf 
-2. "ddos-city.fr - DUMP by SkyZii & Kdz" http://pastebin.com/aEZZz4BH
-3. "Hostiles Stresser DB DUMP - THUG" http://pastebin.com/mW8pXtPh
-4. "National-Stresser.net // Live-stresser.fr BDD DUMPED" http://pastebin.com/Zkwkh1es
+1. http://pastebin.com/kURX6Cwf "Ragebooter SQL dump"  
+2. http://pastebin.com/aEZZz4BH "ddos-city.fr - DUMP by SkyZii & Kdz" 
+3. http://pastebin.com/mW8pXtPh "Hostiles Stresser DB DUMP - THUG" 
+4. http://pastebin.com/Zkwkh1es "National-Stresser.net // Live-stresser.fr BDD DUMPED" 
+5. http://pastebin.com/EpwVqbbh 492.95 KB "DB DUMP BY SMOZY NS HACKED" - nationalstresser 
 
 ### Partial dump
 1. "Lizard Squad Server Dump" http://pastebin.com/2u8Pjy6i
