@@ -5,3 +5,9 @@ Scrutinizing Booters' Leaked Databases with BigData Technologies
 
 
 # List of links
+
+1) "Ragebooter SQL dump" 
+    http://pastebin.com/kURX6Cwf 
+    
+2) "ddos-city.fr - DUMP by SkyZii & Kdz"
+    http://pastebin.com/aEZZz4BH
