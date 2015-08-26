@@ -14,4 +14,5 @@ Scrutinizing Booters' Leaked Databases with BigData Technologies
 ### Partial dump
 1. "Lizard Squad Server Dump" http://pastebin.com/2u8Pjy6i
 2. "Network-Stresser DUMP SQL by OnlyPwnd (60 users)" http://pastebin.com/cpHSJR71
+3. "space-stresser.eu" http://pastebin.com/78fFUfJ7
 
