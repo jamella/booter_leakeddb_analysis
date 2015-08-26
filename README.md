@@ -1,5 +1,5 @@
 # Booters' Leaked Databases Analysis
-Scrutinizing Booters' Leaked Data Bases with BigData Technologies
+Scrutinizing Booters' Leaked Databases with BigData Technologies
 
 # Ethical implications
 
