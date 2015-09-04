@@ -28,12 +28,12 @@ DEFINE UnixToISO org.apache.pig.piggybank.evaluation.datetime.convert.UnixToISO(
 -------------------
 -- FEEDING THE PIG
 -------------------
-linesRaw = LOAD '../dumps/anon_booters.txt' USING PigStorage(',') as (timestamp, recordType, srcIpAnon, alwaysIn , answerType, booterInformation, error);
+linesRaw = LOAD '../../dumps/anon_booters.txt' USING PigStorage(',') as (timestamp: int, recordType, srcIpAnon, alwaysIn , answerType, booterInformation, error);
 lines = FILTER linesRaw BY timestamp is not null;
 lines = FOREACH lines GENERATE timestamp as timestamp, 
 							   -- remove prepended space from all values
                                REPLACE(recordType, ' ', '') as recordType,
-                               REPLACE(srcIpAnon, ' ', '') as srcIps,
+                               REPLACE(srcIpAnon, ' ', '') as srcIpAnon,
                                REPLACE(alwaysIn, ' ', '') as alwaysIn, 
                                REPLACE(answerType, ' ', '') as answerType,
 							   -- normalize domain: lowercase and and remove www
@@ -106,9 +106,21 @@ add = FILTER lines BY recordType == 'R(ADD)';
 
 -------------------
 -- 2) Time-series of the Number of requests X time bin [day]
+-- based on: http://stackoverflow.com/questions/17258153/pig-group-by-ranges-binning-data
+-- however with an UDF it will be more generic:
+-- http://stackoverflow.com/questions/18004054/pig-0-11-1-count-groups-in-a-time-range
 -------------------
+%declare MIN 1434735481
+%declare MAX 1439768573
+%declare BIN_COUNT 100
 
+--BINSIZE  ($MAX- $MIN + 1) / $BIN_COUNT
 
+bin_line = foreach lines generate (timestamp - $MIN) * $BIN_COUNT / ($MAX- $MIN + 1) as bin_id, recordType, srcIpAnon;
+group_by_bin = group bin_line by (bin_id, recordType);
+timeseries_by_type = foreach group_by_bin generate (group.bin_id* ($MAX- $MIN + 1) / $BIN_COUNT) + $MIN, group.recordType, COUNT(bin_line.srcIpAnon);
+--output should be: bin_start, recordType, number of records
+dump timeseries_by_type;
 
 -------------------
 -- 3) Time-series of the Number of requests per booter x time bin
